@@ -1,0 +1,18 @@
+canvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+    #canvas {
+        width: 50vh;
+    }
+
+    .restart-button {
+        top: 50% !important;
+        font-size: 30px !important;
+    }
+}
