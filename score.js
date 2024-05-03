@@ -4,7 +4,7 @@ export default class Score {
     this.ctx = ctx; // Сохраняем контекст рисования
     this.canvas = canvas; // Сохраняем холст
     this.score = 0; // Инициализируем счет
-    this.bestScore = localStorage.getItem("bestScore") || 0; // Получаем лучший счет из локального хранилища или устанавливаем 0
+    this.bestScore = localStorage.getItem("bestsScore") || 0; // Получаем лучший счет из локального хранилища или устанавливаем 0
     this.scoreSound = scoreSound; // Сохраняем звук подсчета очков
   }
 
@@ -25,7 +25,7 @@ export default class Score {
     if (this.score > this.bestScore) {
       // Если текущий счет больше лучшего счета
       this.bestScore = this.score; // Обновляем лучший счет
-      localStorage.setItem("bestScore", this.bestScore); // Сохраняем лучший счет в локальное хранилище
+      localStorage.setItem("bestsScore", this.bestScore); // Сохраняем лучший счет в локальное хранилище
     }
   }
 
@@ -44,6 +44,6 @@ export default class Score {
     this.ctx.font = "25px Arial"; // Устанавливаем шрифт
 
     this.ctx.fillText("" + this.score, 40, 45); // Рисуем текущий счет
-    this.ctx.fillText("" + this.bestScore, 33, 80); // Рисуем лучший счет
+    this.ctx.fillText("" + this.bestScore, 40, 80); // Рисуем лучший счет
   }
 }
